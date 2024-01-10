@@ -2,6 +2,7 @@
 
 調整預設防毒原來CPU使用率佔比(50%->5%)
 https://www.kocpc.com.tw/archives/528487
+https://www.majorgeeks.com/content/page/how_to_change_windows_defender_max_cpu_usage.html
 
 01.使用「Win + R」快捷鍵打開搜尋功能，輸入「gpedit.msc」並按下確定，就能打開「本機群組原則編輯器」
 
@@ -9,7 +10,9 @@ https://www.kocpc.com.tw/archives/528487
 
 03.將下方「指定掃描期間的 CPU 使用率百分比上限」數字改成你想要的，可以設定 5 到 100，預設為 50，如果你想要調低，就是變成 5~50 之間的數字，最低就 5。設定完成之後，每當 Microsoft Defender 啟用自動掃描時，就不會超過這個百分比。輸入完畢後，按套用、確定，這樣就完成了
 
-04.開啟PowerShell 再命令列 輸入 下列命令:『Get-MpPreference | select ScanAvgCPULoadFactor』
+04.使用管理者權限開啟PowerShell 再命令列 輸入 下列命令:『Get-MpPreference | select ScanAvgCPULoadFactor』查詢修改結果
+
+05.使用管理者權限開啟PowerShell 再命令列 輸入 下列命令:『Set-MpPreference -ScanAvgCPULoadFactor 5』使用指令再修改一次
 
 
 
